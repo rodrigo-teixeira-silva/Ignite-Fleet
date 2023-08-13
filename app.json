@@ -2,6 +2,7 @@
   "expo": {
     "name": "ignitefleet",
     "slug": "ignitefleet",
+    "scheme": "ignitefleet",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,7 +22,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#202024"
-      }
+      },
+      "package": "com.linkdri1.ignitefleet"
     },
     "web": {
       "favicon": "./assets/favicon.png"
