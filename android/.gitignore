@@ -10,6 +10,8 @@ build/
 local.properties
 *.iml
 *.hprof
+node_modules
 
 # Bundle artifacts
 *.jsbundle
+.env
