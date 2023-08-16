@@ -31,7 +31,6 @@ export default function App() {
 
       <UserProvider fallback={SignIn}>
         <Home/>
-    <SignIn/>
       </UserProvider>   
         </ThemeProvider>
     </AppProvider>
