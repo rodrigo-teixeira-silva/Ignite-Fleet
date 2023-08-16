@@ -30,9 +30,10 @@ export default function SignIn() {
     })
   };
 
-  useEffect(()=>{
-    if(response?.type==='success'){
+  useEffect(() => {
+    if(response?.type === 'success'){
       if(response.authentication?.idToken){
+ 
 
     }else{
         Alert.alert('Entra','Não foi possível conectar-se a uma conta google.')
