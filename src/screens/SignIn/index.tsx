@@ -14,26 +14,28 @@ import {ANDROID_CLIENT_ID} from '@env'
 WebBrowser.maybeCompleteAuthSession();
 
 export default function SignIn() {
+
   const [isAuthenticating, setIsAuthenticating] = useState(false)
   const [_, response, googleSignIn] = Google.useAuthRequest({
     androidClientId: ANDROID_CLIENT_ID,
     scopes:['profile','email']
   });
 
-  function handleGoogleSignIn(){
+  function handleGoogleSignIn() {
     setIsAuthenticating(true);
 
-    googleSignIn().then((response)=> {
-      if(response.type !== "success"){
+    googleSignIn().then((response) => {
+      if (response.type !== 'success'){
         setIsAuthenticating(false);
       }
     })
-  };
+  }
 
-  useEffect(() => {
+  useEffect(()=>{
+
     if(response?.type === 'success'){
       if(response.authentication?.idToken){
- 
+        console.log('TOKEN DE AUTENTICAÇÃO =>', response.authentication.idToken);
 
     }else{
         Alert.alert('Entra','Não foi possível conectar-se a uma conta google.')
@@ -43,6 +45,7 @@ export default function SignIn() {
   },[response]);
 
   return (
+
   <Container source={backgroundImage}>
     <Title>
     Code link
