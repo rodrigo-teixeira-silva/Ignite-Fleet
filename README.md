@@ -28,6 +28,8 @@ Aplicação feita na trilha ignite da Rocketseat
 - [MongoDB Atlas](https://www.mongodb.com/atlas/database)
 - [Realm DB](https://www.mongodb.com/docs/realm/sdk/react-native/install/)
 - [NPM](https://docs.npmjs.com)
+- [Phosphoricons](https://phosphoricons.com/)
+- [Svg](https://docs.expo.dev/versions/latest/sdk/svg/)
 
 
 # Funcionalidades do projet
@@ -35,8 +37,10 @@ Aplicação feita na trilha ignite da Rocketseat
 - [x] Tela de SignIn
 - [x] Tela principal
 - [x] login social
-
-
+- [x] Header
+- [x] Icones
+- [x] Imagem do usuário
+- [x] Dados do usuário   
 
 # Como executar o projeto
 
