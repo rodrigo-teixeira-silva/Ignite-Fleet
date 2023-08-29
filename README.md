@@ -31,6 +31,8 @@ Aplicação feita na trilha ignite da Rocketseat
 - [Phosphoricons](https://phosphoricons.com/)
 - [Svg](https://docs.expo.dev/versions/latest/sdk/svg/)
 - [xpo Image] (https://docs.expo.dev/versions/latest/sdk/image/)
+- [BlurHash](https://blurha.sh/)
+- [eact Navigation](https://reactnavigation.org/)
 
 
 # Funcionalidades do projet
