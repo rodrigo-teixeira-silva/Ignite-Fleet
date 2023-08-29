@@ -1,4 +1,4 @@
-package com.linkdri1.ignitefleet;
+package com.rodrigoteixeiraa.ignitefleet;
 
 import android.os.Build;
 import android.os.Bundle;

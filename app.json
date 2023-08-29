@@ -23,7 +23,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#202024"
       },
-      "package": "com.linkdri1.ignitefleet"
+      "package": "com.rodrigoteixeiraa.ignitefleet"
     },
     "web": {
       "favicon": "./assets/favicon.png"
