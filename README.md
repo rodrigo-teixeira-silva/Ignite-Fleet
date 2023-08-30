@@ -35,6 +35,7 @@ Aplicação feita na trilha ignite da Rocketseat
 - [eact Navigation](https://reactnavigation.org/)
 
 
+
 # Funcionalidades do projet
 
 - [x] Tela de SignIn
