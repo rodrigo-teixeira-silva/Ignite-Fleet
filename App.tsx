@@ -1,17 +1,18 @@
 import { ThemeProvider} from 'styled-components/native'
-import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto'
+import { StatusBar } from 'react-native';
 import {AppProvider, UserProvider} from '@realm/react';
 import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto'
+import { RealmProvider } from './src/libs/realm';
 
 import theme from './src/theme';
 
-import SignIn from './src/screens/SignIn';
+import {REALM_APP_ID} from '@env';
 
-import {REALM_APP_ID} from '@env'
-
-import { Loading } from './src/components/Loading';
-import { StatusBar } from 'react-native';
 import { Routes } from './src/routes';
+
+import SignIn from './src/screens/SignIn';
+import { Loading } from './src/components/Loading';
 
 export default function App() {
     const [fontsLoaded] =useFonts({Roboto_400Regular, Roboto_700Bold});
@@ -33,7 +34,9 @@ export default function App() {
           translucent />
 
         <UserProvider fallback={SignIn}>
-          <Routes/>
+          <RealmProvider>
+            æ<Routes/>
+          </RealmProvider>
         </UserProvider>
        </SafeAreaProvider> 
       </ThemeProvider>
