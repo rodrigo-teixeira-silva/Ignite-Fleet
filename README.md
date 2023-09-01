@@ -30,7 +30,7 @@ Aplicação feita na trilha ignite da Rocketseat
 - [NPM](https://docs.npmjs.com)
 - [Phosphoricons](https://phosphoricons.com/)
 - [Svg](https://docs.expo.dev/versions/latest/sdk/svg/)
-- [xpo Image] (https://docs.expo.dev/versions/latest/sdk/image/)
+- [Expo Image](https://docs.expo.dev/versions/latest/sdk/image/)
 - [BlurHash](https://blurha.sh/)
 - [eact Navigation](https://reactnavigation.org/)
 
