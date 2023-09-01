@@ -35,7 +35,7 @@ export default function App() {
 
         <UserProvider fallback={SignIn}>
           <RealmProvider>
-            æ<Routes/>
+            <Routes/>
           </RealmProvider>
         </UserProvider>
        </SafeAreaProvider> 
