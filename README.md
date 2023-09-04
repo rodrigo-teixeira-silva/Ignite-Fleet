@@ -33,6 +33,7 @@ Aplicação feita na trilha ignite da Rocketseat
 - [Expo Image](https://docs.expo.dev/versions/latest/sdk/image/)
 - [BlurHash](https://blurha.sh/)
 - [eact Navigation](https://reactnavigation.org/)
+- [react-native-get-random-values](react-native-get-random-values)
 
 
 
