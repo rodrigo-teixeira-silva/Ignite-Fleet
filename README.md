@@ -34,8 +34,7 @@ Aplicação feita na trilha ignite da Rocketseat
 - [BlurHash](https://blurha.sh/)
 - [eact Navigation](https://reactnavigation.org/)
 - [react-native-get-random-values](react-native-get-random-values)
-
-
+- [Day.js](https://day.js.org/)
 
 # Funcionalidades do projet
 
