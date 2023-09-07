@@ -1,8 +1,11 @@
-import { ThemeProvider} from 'styled-components/native'
+import 'react-native-get-random-values';
+import './src/libs/dayjs';
+
+import { ThemeProvider} from 'styled-components/native';
 import { StatusBar } from 'react-native';
-import {AppProvider, UserProvider} from '@realm/react';
+import { AppProvider, UserProvider} from '@realm/react';
 import { SafeAreaProvider } from 'react-native-safe-area-context'
-import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto'
+import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 import { RealmProvider } from './src/libs/realm';
 
 import theme from './src/theme';
@@ -18,8 +21,8 @@ export default function App() {
     const [fontsLoaded] =useFonts({Roboto_400Regular, Roboto_700Bold});
 
     if (!fontsLoaded) {
-        return(
-            <Loading />
+      return(
+        <Loading />
         );
     }
 
@@ -31,13 +34,12 @@ export default function App() {
           <StatusBar 
           barStyle='light-content' 
           backgroundColor="transparent" 
-          translucent />
+          translucent 
+          />
 
         <UserProvider fallback={SignIn}>
           <RealmProvider>
-
           <Routes/>
-
           </RealmProvider>
         </UserProvider>
        </SafeAreaProvider> 
