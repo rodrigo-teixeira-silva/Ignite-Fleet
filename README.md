@@ -35,6 +35,7 @@ Aplicação feita na trilha ignite da Rocketseat
 - [eact Navigation](https://reactnavigation.org/)
 - [react-native-get-random-values](react-native-get-random-values)
 - [Day.js](https://day.js.org/)
+- [react-native-keyboard-aware-scroll-view](https://www.npmjs.com/package/react-native-keyboard-aware-scroll-view)
 
 # Funcionalidades do projet
 
