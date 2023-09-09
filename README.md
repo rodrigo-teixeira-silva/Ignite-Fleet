@@ -13,7 +13,13 @@ Aplicação utilizando framework react native na pratica, com login social com c
 
 ## Layout mobile
 ![Alt text](./assets/Imagem-1.jpg)
-Aplicação feita na trilha ignite da Rocketseat
+![Alt text](./assets/splash.png)
+![Alt text](./assets/Tela Signin.png)
+![Alt text](./assets/Home sem carro em uso .png)
+![Alt text](./assets/Home sem carro em uso .png)
+![Alt text](./assets/checkOou.png)
+![Alt text](./assets/Checkout (com indicador offline).png)
+
 
 # Tecnologias utilizadas
 ## Aplicação
