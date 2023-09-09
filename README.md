@@ -37,6 +37,7 @@ Aplicação feita na trilha ignite da Rocketseat
 - [Day.js](https://day.js.org/)
 - [react-native-keyboard-aware-scroll-view](https://www.npmjs.com/package/react-native-keyboard-aware-scroll-view)
 - [NetInfo](https://docs.expo.dev/versions/latest/sdk/netinfo/?utm_source=google&utm_medium=cpc&utm_content=performancemax&gclid=CjwKCAjwr_CnBhA0EiwAci5siu9brkVaSLxWFq5rnDPmU35J5cu2PyAD4gqF6pcpPFaIYK_mXWL_1RoCi6QQAvD_BwE)
+- [AsyncStorage](https://docs.expo.dev/versions/latest/sdk/async-storage/)
 
 # Funcionalidades do projet
 
