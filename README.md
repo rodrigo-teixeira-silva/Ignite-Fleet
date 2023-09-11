@@ -15,14 +15,13 @@ Aplicação utilizando framework react native na pratica, com login social com c
 
 
 ## Layout mobile
-![Alt text](./assets/Tela%20splash.png)
-![Alt text](./assets/Tela%20Signin.png)
-![Alt text](./assets/Tela%20Signin.png)
-![Alt text](./assets/Home%20sem%20carro%20em%20uso%20.png)
-![Alt text](./assets/Home%20com%20carro%20em%20uso.png)
-![Alt text](./assets/checkOou%20.png)
-![Alt text](./assets/Checkout%20(com%20indicador%20offline).png)
 
+<img src="./assets/Tela splash.png" width="325px" height="700px"/>
+<img src="./assets/Tela Signin.png" width="325px" height="700px"/>
+<img src="./assets/Home sem carro em uso .png" width="325px" height="700px"/>
+<img src="./assets/Home com carro em uso.png" width="325px" height="700px"/>
+<img src="./assets/Checkout (com indicador offline).png" width="325px" height="700px"/>
+<img src="./assets/checkOou .png" width="325px" height="700px"/>
 
 # Tecnologias utilizadas
 ## Aplicação
