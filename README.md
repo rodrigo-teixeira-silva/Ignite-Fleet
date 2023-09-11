@@ -23,7 +23,7 @@ Aplicação utilizando framework react native na pratica, com login social com c
 <img src="./assets/Home com carro em uso.png" width="350px" height="700px"/>
 
 <img src="./assets/Checkout (com indicador offline).png" width="350px" height="700px"/>
-<img src="./assets/checkOou .png" width="300px" height="750px"/>
+<img src="./assets/checkOou .png" width="350px" height="750px"/>
 
 
 # Tecnologias utilizadas
