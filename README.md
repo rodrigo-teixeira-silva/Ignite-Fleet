@@ -16,8 +16,8 @@ Aplicação utilizando framework react native na pratica, com login social com c
 
 ## Layout mobile
 
-<img src="./assets/Tela splash.png" width="300px" height="700px"/>
-<img src="./assets/Tela Signin.png" width="300px" height="700px"/>
+<img src="./assets/Tela splash.png" width="200px" height="700px"/>
+<img src="./assets/Tela Signin.png" width="200px" height="700px"/>
 <img src="./assets/Home sem carro em uso .png" width="300px" height="700px"/>
 <img src="./assets/Home com carro em uso.png" width="300px" height="700px"/>
 <img src="./assets/Checkout (com indicador offline).png" width="300px" height="700px"/>
