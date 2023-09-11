@@ -1,4 +1,7 @@
 
+## 💻 Projeto
+
+
 # Ignite fleet
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/linkdri1/ignite_Fleet/blob/main/LICENSE)
 
@@ -12,13 +15,13 @@ Aplicação utilizando framework react native na pratica, com login social com c
 
 
 ## Layout mobile
-![Alt text](./assets/Imagem-1.jpg)
-![Alt text](./assets/splash.png)
-![Alt text](./assets/Tela Signin.png)
-![Alt text](./assets/Home sem carro em uso .png)
-![Alt text](./assets/Home sem carro em uso .png)
-![Alt text](./assets/checkOou.png)
-![Alt text](./assets/Checkout (com indicador offline).png)
+![Alt text](./assets/Tela%20splash.png)
+![Alt text](./assets/Tela%20Signin.png)
+![Alt text](./assets/Tela%20Signin.png)
+![Alt text](./assets/Home%20sem%20carro%20em%20uso%20.png)
+![Alt text](./assets/Home%20com%20carro%20em%20uso.png)
+![Alt text](./assets/checkOou%20.png)
+![Alt text](./assets/Checkout%20(com%20indicador%20offline).png)
 
 
 # Tecnologias utilizadas
@@ -68,7 +71,7 @@ cd Projeto Fleet
 npm install
 
 # executar o projeto.
-npx expo run: android
+npx expo run:android
 ```
 ## Aplicação Mobile
 Pré-requisitos: npm 
