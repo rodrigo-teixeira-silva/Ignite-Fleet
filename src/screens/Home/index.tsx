@@ -1,38 +1,46 @@
 import { useEffect, useState, } from 'react';
+import {Alert, FlatList} from 'react-native';
+import { CloudArrowUp } from 'phosphor-react-native';
+import Toast from 'react-native-toast-message';
 import { useNavigation } from '@react-navigation/native';
+import dayjs from 'dayjs';
 
-import { useQuery } from '../../libs/realm';
+import { useUser } from '@realm/react';
+import { useQuery, useRealm } from '../../libs/realm';
 import { Historic } from '../../libs/realm/schemas/Historic';
-import dayjs from 'dayjs'
+import { getLastAsyncTimestamp, saveLastSyncTimestamp } from '../../libs/asyncStorage/syncStorage';
 
-import { CarStatus } from '../../components/CarStatus';
 import { HomeHeader } from '../../components/HomeHeader';
-import { HistorcCardProps, HistoricCard, HistoricCards } from '../../components/HistoricCard';
+import { CarStatus } from '../../components/CarStatus';
 
 import { Container, Content, Title, Label } from './styles';
-import {Alert, FlatList} from 'react-native';
-import { useRealm } from '../../libs/realm';
+import { HistorcCardProps, HistoricCard } from '../../components/HistoricCard';
+import { TopMessage } from '../../components/TopMessage';
 
 
 
 export function Home() {
   const [ vehicleInUse, setVeicleInUse ] = useState<Historic | null>(null);
   const [vehicleHistoric, setVehicleHistoric ] = useState<HistorcCardProps[]>([]);
+  const [ persentageToSync, setPersentageToSync ] = useState<string | null>(null);
 
   const { navigate } = useNavigation();
 
   const historic = useQuery(Historic);
+  const user = useUser();
   const realm =useRealm();
 
-    function handleRegisterMoviment(){
-      if( vehicleInUse?._id ) {
+  function handleRegisterMoviment(){
+  if( vehicleInUse?._id ) {
         return navigate('arrival', { id: vehicleInUse?._id.toString()});
       } else {
-        navigate('departure');
-      }
-    }
 
-    function fetchVehicleInUse() {
+          navigate('departure');
+          
+    }
+  }
+
+  function fetchVehicleInUse() {
       try{
         const vehicle = historic.filtered("status = 'departure'")[0];
         setVeicleInUse(vehicle);
@@ -40,32 +48,49 @@ export function Home() {
         Alert.alert('Veículo em uso', 'Nãofoi possível carregar o veículo em uso.')
        console.log(error);
       }
-    }
+  }
 
-    function fetchHistoric(id: string) {
-      try{
+  async function fetchHistoric() {
+    try{
       const response = historic.filtered("status = 'arrival' SORT(created_at DESC)");
+
+      const lastSync = await getLastAsyncTimestamp();
+
       const formattedHistoric = response.map((item) => {
         return({
           id: item._id!.toString(),
           LicensePlate:item.license_plate,
-          isSiync: false,
-          created: dayjs(item.created_at).format('[ Saída em ] DD/MM/YYYY [ás] HH:mm')
+          isSync: lastSync > item.updated_at!.getTime(),
+          created: dayjs(item.created_at).format('[ Saída em ] DD/MM/YYYY [às] HH:mm')
 
         });
       });
+
       setVehicleHistoric(formattedHistoric);
+
     }catch(error){
       console.log(error);
       Alert.alert('Historico', 'Não foi possível carregar o histórico.')
         
     }
-  
   }
 
   function handleHistoricDetails (id: string) {
     navigate('arrival',{id} )
 
+  }
+
+  async function progressNotification(transferred: number, transferable: number) {
+    const percentage = (transferred / transferable) *100;
+
+    if(percentage === 100) {
+      await saveLastSyncTimestamp();
+      await fetchHistoric();
+      setPersentageToSync(null);
+  }
+    if (percentage < 100) {
+        setPersentageToSync(`${percentage.toFixed(0)}% sincronizado.`);
+    }
   }
 
     useEffect(() => {
@@ -85,11 +110,40 @@ export function Home() {
     useEffect(() => {
       fetchHistoric();
     }, [historic]);
+    
+    useEffect(()=> {
+      realm.subscriptions.update((mutableSubs, realm) => {
+        const historicByUserQuery = realm.objects('Historic').filtered(`user_id = '${user!.id}'` );
+
+        mutableSubs.add(historicByUserQuery, {name: 'historic_by_user'});
+
+      })
+    },[realm]);
+
+
+    useEffect(() => {
+      const syncSession = realm.syncSession;
+
+      if(!syncSession){
+        return;
+      }
+
+        syncSession?.addProgressNotification (
+        Realm.ProgressDirection.Upload,
+        Realm.ProgressMode.ReportIndefinitely,
+        progressNotification
+      );
+
+      return () => syncSession.removeProgressNotification(progressNotification);
+    }, []);
 
   return (
     <Container>
        <HomeHeader />
-
+      { 
+        persentageToSync && <TopMessage title={persentageToSync} icon={CloudArrowUp}/> 
+      }
+      
          <Content>
             <CarStatus
              licensePlate={vehicleInUse?.license_plate}

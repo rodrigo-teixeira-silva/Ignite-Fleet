@@ -1,21 +1,26 @@
+import { useEffect, useState } from 'react';
 import { Alert } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { X } from 'phosphor-react-native';
+import { BSON } from 'realm';
 
 import { useObject, useRealm } from '../../libs/realm';
 import { Historic } from '../../libs/realm/schemas/Historic';
 
-import { Container, Content, Description, Footer, Label, LicensePlate } from './styles';
+import { Container, Content, Description, Footer, Label, LicensePlate, AsyncMessage } from './styles';
+
 import { Header } from '../../components/Header';
 import { Button } from '../../components/Button';
 import { ButtonIcon } from '../../components/ButtonIcon';
-import { BSON } from 'realm';
+import { getLastAsyncTimestamp } from '../../libs/asyncStorage/syncStorage';
+
 
 type RouteParamsProps = {
     id:string;
 }
 
 export function Arrival() {
+  const [ dataNotSynced, setDataNotSynced] = useState(false);
 
     const route = useRoute();
 
@@ -67,15 +72,22 @@ export function Arrival() {
     }
   }
 
+  useEffect(()=>{
+    getLastAsyncTimestamp()
+    .then(lastSync => setDataNotSynced(historic!.updated_at.getTime() > lastSync));
+
+
+  }, []);
+
 
   return (
     <Container>
         <Header title={title}/>
 
         <Content>
-            <Label>
-                Placas do vaículo
-            </Label>
+          <Label>
+            Placas do vaículo
+          </Label>
 
           <LicensePlate>
             {historic?.license_plate}
@@ -105,6 +117,14 @@ historic?.status === 'departure' &&
   />
 </Footer>
 }
-    </Container>
-  );
+
+  {
+    dataNotSynced &&
+    <AsyncMessage>
+       Sincronização da {historic?.status === "departure" ? "partida" : "chegada"} pendente.
+    </AsyncMessage>
+  }
+
+</Container>
+);
 }
