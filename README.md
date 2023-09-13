@@ -49,6 +49,7 @@ Aplicação utilizando framework react native na pratica, com login social com c
 - [react-native-keyboard-aware-scroll-view](https://www.npmjs.com/package/react-native-keyboard-aware-scroll-view)
 - [NetInfo](https://docs.expo.dev/versions/latest/sdk/netinfo/?utm_source=google&utm_medium=cpc&utm_content=performancemax&gclid=CjwKCAjwr_CnBhA0EiwAci5siu9brkVaSLxWFq5rnDPmU35J5cu2PyAD4gqF6pcpPFaIYK_mXWL_1RoCi6QQAvD_BwE)
 - [AsyncStorage](https://docs.expo.dev/versions/latest/sdk/async-storage/)
+- [Expo Location] (https://docs.expo.dev/versions/latest/sdk/location/)
 
 # Funcionalidades do projeto
 
