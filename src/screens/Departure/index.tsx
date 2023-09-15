@@ -5,10 +5,11 @@ import { Car } from 'phosphor-react-native';
 import { useNavigation } from '@react-navigation/native';
 import { 
   useForegroundPermissions, 
+  requestBackgroundPermissionsAsync,
   watchPositionAsync, 
   LocationAccuracy,
   LocationSubscription,
-  LocationObjectCoords,
+  LocationObjectCoords
 } from 'expo-location';
 
 import {useUser} from '@realm/react'
@@ -21,11 +22,13 @@ import { LocationInfo } from '../../components/locationInfo'
 import { Loading } from '../../components/Loading';
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
-import { Map} from '../../components/Map'
+import { Map } from '../../components/Map'
 
 import { Container, Content, Message } from './styles';
 import { licencePlateValidate } from '../../utils/LicencePlateValidate';
 import { getAddressLocation } from '../../utils/getAddressLocation';
+import { startLocationTask } from '../../tasks/backgroundLocationTask';
+
 
 export function Departure() {
   const [ description, setDescription ] = useState('');
@@ -44,7 +47,7 @@ export function Departure() {
   const descriptionRef = useRef<TextInput>(null);
   const licensePlateRef = useRef<TextInput>(null);
  
-  function handleDepartureRegister(){
+  async function handleDepartureRegister(){
   try{ 
     if(!licencePlateValidate(licensePlate)) {
       licensePlateRef.current?.focus();
@@ -52,10 +55,23 @@ export function Departure() {
     }
 
     if(description.trim().length === 0) {
-    descriptionRef.current?.focus();
-    return Alert.alert('Finalidade' , 'Por favor, informe a finalidade da utulização do veículo');
+      descriptionRef.current?.focus();
+        return Alert.alert('Finalidade' , 'Por favor, informe a finalidade da utulização do veículo');
     }
+
+    if(!currentCoords?.altitude && !currentCoords?.longitude){
+      return Alert.alert('Localização',' não foi possível obter a localização ArrowsOutCardinal. Tente novamente!');
+    }
+
     setIsRegistering(true);
+
+    const backgroundPermissions = await requestBackgroundPermissionsAsync()
+    if(!backgroundPermissions.granted) {
+      setIsRegistering(false);
+      return Alert.alert('Localização', 'É necessário permitir que o App tenha acesso localização em segundo plano. Acesse as configurações do dispositivo e habilite "Permitir o tempo todo."')
+    }
+    
+    await startLocationTask();
 
     realm.write(() => {
       realm.create('Historic', Historic.generate({
