@@ -15,6 +15,7 @@ Aplicação utilizando framework react native na pratica, com login social com c
 
 
 ## Layout mobile
+- [Figma(Ignite_fleet)](https://www.figma.com/file/tDkQrh1hEcDhfi4PRYUYfA/Ignite-Fleet-(Community)?type=design&node-id=47-2&mode=design&t=C5cmUwuAYL8gjlgF-0)
 
 <img src="./assets/Tela splash.png" width="350px" height="700px"/>
 <img src="./assets/Tela Signin.png" width="350px" height="700px"/>
@@ -53,7 +54,7 @@ Aplicação utilizando framework react native na pratica, com login social com c
 - [Expo TaskManager](https://docs.expo.dev/versions/latest/sdk/task-manager/)
 
 # Funcionalidades do projeto
-- [Layout figma](https://www.figma.com/file/tDkQrh1hEcDhfi4PRYUYfA/Ignite-Fleet-(Community)?type=design&node-id=47-2&mode=design&t=C5cmUwuAYL8gjlgF-0)
+
 
 - [x] Tela de Splash
 - [x] Tela de SignIn
