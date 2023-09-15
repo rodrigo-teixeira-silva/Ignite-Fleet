@@ -50,16 +50,22 @@ Aplicação utilizando framework react native na pratica, com login social com c
 - [NetInfo](https://docs.expo.dev/versions/latest/sdk/netinfo/?utm_source=google&utm_medium=cpc&utm_content=performancemax&gclid=CjwKCAjwr_CnBhA0EiwAci5siu9brkVaSLxWFq5rnDPmU35J5cu2PyAD4gqF6pcpPFaIYK_mXWL_1RoCi6QQAvD_BwE)
 - [AsyncStorage](https://docs.expo.dev/versions/latest/sdk/async-storage/)
 - [Expo Location] (https://docs.expo.dev/versions/latest/sdk/location/)
+- [Expo TaskManager](https://docs.expo.dev/versions/latest/sdk/task-manager/)
 
 # Funcionalidades do projeto
+<a href=“https://www.figma.com/file/tDkQrh1hEcDhfi4PRYUYfA/Ignite-Fleet-(Community)?type=design&node-id=47-2&mode=design&t=C5cmUwuAYL8gjlgF-0“>Layout_Figma</a>
 
+- [x] Tela de Splash
 - [x] Tela de SignIn
-- [x] Tela principal
 - [x] login social
-- [x] Header
-- [x] Icones
-- [x] Imagem do usuário
-- [x] Dados do usuário   
+- [X] Tela de Home (sem carro em uso)
+- [X] Tela de Home (com carro em uso)
+- [x] Checkout 
+- [x] Checkout (com indicador de offline)
+- [x] Registrar chegada  
+- [x] Chegada Registrada 
+
+       
 
 # Como executar o projeto
 
