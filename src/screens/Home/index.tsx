@@ -32,7 +32,8 @@ export function Home() {
 
   function handleRegisterMoviment(){
   if( vehicleInUse?._id ) {
-        return navigate('arrival', { id: vehicleInUse?._id.toString()});
+      
+        return navigate('arrival', {id: vehicleInUse?._id.toString()});
       } else {
 
           navigate('departure');
@@ -142,16 +143,15 @@ export function Home() {
        <HomeHeader />
       { 
         persentageToSync && <TopMessage title={persentageToSync} icon={CloudArrowUp}/> 
-      }
-      
-         <Content>
-            <CarStatus
-             licensePlate={vehicleInUse?.license_plate}
-             onPress={handleRegisterMoviment}
+      }    
+         <Content>           
+         <CarStatus 
+            licensePlate={vehicleInUse?.license_plate}
+            onPress={handleRegisterMoviment}
             />
 
             <Title>
-              Historico
+              Historic
             </Title>
 
             <FlatList
