@@ -138,8 +138,9 @@ export function Arrival() {
   
     
   if(isLoading){
-      return
+      return(
         <Loading />
+      )
     }
 
   return (
