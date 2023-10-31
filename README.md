@@ -44,7 +44,7 @@ Aplicação utilizando framework react native na pratica, com login social com c
 - [Svg](https://docs.expo.dev/versions/latest/sdk/svg/)
 - [Expo Image](https://docs.expo.dev/versions/latest/sdk/image/)
 - [BlurHash](https://blurha.sh/)
-- [eact Navigation](https://reactnavigation.org/)
+- [react Navigation](https://reactnavigation.org/)
 - [react-native-get-random-values](react-native-get-random-values)
 - [Day.js](https://day.js.org/)
 - [react-native-keyboard-aware-scroll-view](https://www.npmjs.com/package/react-native-keyboard-aware-scroll-view)
