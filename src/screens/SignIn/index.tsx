@@ -1,16 +1,23 @@
 import { useEffect, useState } from 'react';
 import { Alert } from 'react-native';
+import { GoogleSignin } from '@react-native-google-signin/google-signin'
 import * as WebBrowser from 'expo-web-browser';
 import * as Google from 'expo-auth-session/providers/google';
 import {Realm, useApp} from '@realm/react'
+import { ANDROID_CLIENT_ID, WEB_CLIENT_ID,} from '@env';
 
 import { Container, Title, Slogan } from './styles';
-
 import backgroundImage from '../../assets/background.png'
-
 import { Button } from '../../components/Button';
 
-import {ANDROID_CLIENT_ID} from '@env';
+//import {ANDROID_CLIENT_ID} from '@env';
+
+GoogleSignin.configure({
+  scopes: ['email', 'profile'],
+  webClientId: WEB_CLIENT_ID
+
+
+})
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -23,8 +30,8 @@ export default function SignIn() {
     androidClientId: ANDROID_CLIENT_ID,
     scopes: ['profile','email']
   });
-  
-  function handleGoogleSignIn() {
+  try
+{  async function handleGoogleSignIn() {
     setIsAuthenticating(true);
 
     googleSignIn().then((response) => {
@@ -32,6 +39,11 @@ export default function SignIn() {
         setIsAuthenticating(false);
       }
     })
+  }}catch(error){
+    console.log(error)
+    setIsAuthenticating(false)
+    Alert.alert('Entrar', 'Não foi possível conctar-se a sua conta google!')
+
   }
 
   useEffect(()=>{
