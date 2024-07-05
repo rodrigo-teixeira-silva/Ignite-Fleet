@@ -15,17 +15,21 @@ Aplicação utilizando framework react native na pratica, com login social com c
 
 
 ## Layout mobile
-- [Figma(Ignite_fleet)](https://www.figma.com/file/tDkQrh1hEcDhfi4PRYUYfA/Ignite-Fleet-(Community)?type=design&node-id=47-2&mode=design&t=C5cmUwuAYL8gjlgF-0)
+- [(Ignite_fleet)](https://www.figma.com/file/tDkQrh1hEcDhfi4PRYUYfA/Ignite-Fleet-(Community)?type=design&node-id=47-2&mode=design&t=C5cmUwuAYL8gjlgF-0)
 
-<img src="./assets/Tela splash.png" width="350px" height="700px"/>
-<img src="./assets/Tela Signin.png" width="350px" height="700px"/>
+## Telas do Aplicativo
 
-<img src="./assets/Home sem carro em uso .png" width="350px" height="700px"/>
-<img src="./assets/Home com carro em uso.png" width="350px" height="700px"/>
+| Tela Splash | Tela Signin |
+| ----------- | ----------- |
+| <img src="./assets/Tela splash.png" width="200px" height="400px" style="padding-right: 10px;"/> | <img src="./assets/Tela Signin.png" width="200px" height="400px" style="padding-right: 10px;"/> |
 
-<img src="./assets/Checkout (com indicador offline).png" width="350px" height="700px"/>
-<img src="./assets/checkOou .png" width="350px" height="750px"/>
+| Home sem carro em uso | Home com carro em uso |
+| --------------------- | --------------------- |
+| <img src="./assets/Home sem carro em uso.png" width="200px" height="400px" style="padding-right: 10px;"/> | <img src="./assets/Home com carro em uso.png" width="200px" height="400px" style="padding-right: 10px;"/> |
 
+| Checkout (com indicador offline) | Checkout |
+| -------------------------------- | -------- |
+| <img src="./assets/Checkout (com indicador offline).png" width="200px" height="400px" style="padding-right: 10px;"/> | <img src="./assets/checkOou .png" width="200px" height="400px" style="padding-right: 10px;"/> |
 
 # Tecnologias utilizadas
 ## Aplicação
