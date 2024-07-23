@@ -27,7 +27,7 @@ Aplicação utilizando framework react native na pratica, com login social com c
 | --------------------- | --------------------- |
 | <img src="./assets/Home sem carro em uso .png" width="200px" height="400px" style="padding-right: 10px;"/> | <img src="./assets/Home com carro em uso.png" width="200px" height="400px" style="padding-right: 10px;"/> |
 
-| Checkout (com indicador offline) | Checkout |
+| Checkout(indicador offline) | Checkout |
 | -------------------------------- | -------- |
 | <img src="./assets/Checkout (com indicador offline).png" width="200px" height="400px" style="padding-right: 10px;"/> | <img src="./assets/checkOou .png" width="200px" height="400px" style="padding-right: 10px;"/> |
 
